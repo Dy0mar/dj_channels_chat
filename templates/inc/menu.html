@@ -1,0 +1,14 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-info">
+    <div id="navbarNavDropdown" class="navbar-collapse collapse">
+        <div class="navbar-nav mr-auto">
+            <a class="navbar-brand" href="/">Django Chat</a>
+        </div>
+        <ul class="navbar-nav">
+            {% if user.is_authenticated %}
+                <li><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
+            {% else %}
+                <li><a class="nav-link" href="{% url 'login' %}">Login</a></li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>

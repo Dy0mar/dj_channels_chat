@@ -1,0 +1,13 @@
+{% load widget_tweaks %}
+
+<form method="post" class="form" action="{{ action }}">
+    {% csrf_token %}
+    {% for field in form %}
+        <div class="form-group">
+            <label for="{{ field.id_for_label }}">{{ field.html_name|title }}</label>
+            {{ field |add_class:"form-control" }}
+        </div>
+    {% endfor %}
+    <button class="btn btn-primary" type="submit">Send</button>
+    <input type="hidden" name="next" value="{{ next }}" />
+</form>

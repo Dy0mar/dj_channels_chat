@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+
+    <div class="row">
+        <div class="col-md-12">
+            {% include 'inc/form_errors.html' %}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 offset-4">
+            {% url 'login' as login_url %}
+            {% include 'inc/form.html' with form=form action=login_url %}
+
+        </div>
+    </div>
+
+{% endblock %}
+
